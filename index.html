@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Address Searcher</title>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
     <script src="dist/bundle.js" defer></script>
     <link rel="stylesheet" href="app.css">
   </head>
@@ -12,7 +13,7 @@
     <div id="map">
       <p>Enter address</p>
     </div>
-    <form>
+    <form id="search-form">
       <input type="text" id="address-input">
       <button class="submit">Search</button>
     </form>
