@@ -18,7 +18,7 @@ type GoogleGeoResponse = {
   status: 'OK' | 'ZERO_RESULTS'
 };
 
-function createUrl(enteredAddress: string): string {
+function createGoogleMapUrl(enteredAddress: string): string {
   return `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(enteredAddress)}&key=${GOOGLE_API_KEY}`
 };
 
@@ -26,7 +26,7 @@ function searchAddressHandler(event: Event) {
   event.preventDefault();
   const enteredAddress = addressInput.value;
   
-  axios.get<GoogleGeoResponse>(createUrl(enteredAddress), )
+  axios.get<GoogleGeoResponse>(createGoogleMapUrl(enteredAddress), )
     .then(response => {
       if(response.data.status !== 'OK') {
         throw new Error('Cannot get Geometry.....')
